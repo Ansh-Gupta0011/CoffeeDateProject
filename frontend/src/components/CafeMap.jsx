@@ -541,7 +541,7 @@ function CafeMap({ onCafeSelect, dateTime }) {
 
                 {/* USER LOCATION INFO */}
 
-                <div className="user-location-info">
+                {/* <div className="user-location-info">
 
                     {userLocation && (
                         <span>
@@ -555,7 +555,7 @@ function CafeMap({ onCafeSelect, dateTime }) {
                         </span>
                     )}
 
-                </div>
+                </div> */}
 
                 {/* MAP + CAFE LIST */}
 
