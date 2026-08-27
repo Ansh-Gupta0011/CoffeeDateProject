@@ -1786,3 +1786,412 @@ body {
         width: 90%;
     }
 }
+
+/* =====================================================
+   FINAL RESPONSIVE BUTTON FIX
+   ===================================================== */
+
+/* Keep the button area stable even when No button moves */
+.buttons {
+    position: relative;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    justify-items: center;
+
+    gap: 18px;
+
+    margin-top: 42px;
+}
+
+
+/* =====================================================
+   YES + NO COMMON
+   ===================================================== */
+
+.yes-button,
+.no-button {
+    width: 180px;
+    height: 72px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   YES BUTTON
+   ===================================================== */
+
+.yes-button {
+    grid-column: 1;
+
+    position: relative;
+
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b9b,
+            #ff4f87
+        );
+
+    box-shadow:
+        0 15px 30px
+        rgba(255, 80, 130, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.yes-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(255, 80, 130, 0.38);
+}
+
+
+/* =====================================================
+   NO BUTTON - INITIAL
+   ===================================================== */
+
+.no-button {
+    grid-column: 2;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    border: 2px solid #ff9fbd;
+
+    background: white;
+
+    color: #e95f88;
+
+    box-shadow:
+        0 10px 22px
+        rgba(255, 100, 150, 0.15);
+
+    z-index: 1000;
+}
+
+
+/* =====================================================
+   NO BUTTON - MOVED
+   ===================================================== */
+
+.no-button.moved {
+    position: fixed;
+
+    width: 180px;
+    height: 72px;
+
+    margin: 0;
+
+    z-index: 99999;
+
+    border: 2px solid #ff9fbd;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #e95f88;
+
+    box-shadow:
+        0 12px 30px
+        rgba(255, 100, 150, 0.28);
+
+    transition:
+        left 0.35s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        ),
+        top 0.35s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        );
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .coffee-page {
+        width: 100vw;
+        min-height: 100dvh;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* Smaller card for phone */
+    .card {
+        width: min(92vw, 520px);
+
+        min-height: auto;
+
+        padding:
+            38px
+            20px
+            45px;
+
+        border-radius: 32px;
+    }
+
+
+    /* Coffee */
+    .coffee-cup {
+        font-size: 58px;
+        margin-bottom: 18px;
+    }
+
+
+    /* Heading */
+    .card h1 {
+        width: 100%;
+
+        font-size: clamp(
+            27px,
+            7.5vw,
+            36px
+        );
+
+        line-height: 1.15;
+
+        letter-spacing: -0.8px;
+
+        text-align: center;
+    }
+
+
+    /* Description */
+    .card p {
+        width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.4;
+
+        text-align: center;
+
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+
+    /* =================================================
+       MOBILE BUTTONS
+       ================================================= */
+
+    .buttons {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 12px;
+
+        margin-top: 25px;
+
+        align-items: center;
+    }
+
+
+    .yes-button,
+    .no-button {
+        width: 100%;
+        max-width: 145px;
+
+        height: 58px;
+
+        font-size: 19px;
+
+        border-radius: 40px;
+    }
+
+
+    .yes-button {
+        grid-column: 1;
+
+        justify-self: center;
+    }
+
+
+    .no-button {
+        grid-column: 2;
+
+        justify-self: center;
+    }
+
+
+    /* When No moves, Yes keeps its original position */
+    .no-button.moved {
+        width: 140px;
+        height: 58px;
+
+        max-width: none;
+
+        margin: 0;
+    }
+
+
+    /* Smaller decorations */
+    .card-lines {
+        transform: scale(0.75);
+    }
+
+
+    .card-lines-left {
+        left: 18px;
+        top: 35px;
+    }
+
+
+    .card-lines-right {
+        right: 18px;
+        top: 35px;
+    }
+
+
+    .coffee-small-heart {
+        top: 38px;
+        right: 23%;
+
+        font-size: 30px;
+    }
+
+
+    .big-star {
+        font-size: 40px;
+    }
+
+
+    .cloud span {
+        width: 80px;
+        height: 50px;
+    }
+
+
+    .card-bottom-heart {
+        bottom: 20px;
+
+        font-size: 18px;
+    }
+
+
+    .card-bottom-heart.left {
+        left: 35px;
+    }
+
+
+    .card-bottom-heart.right {
+        right: 35px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .coffee-page {
+        padding: 10px;
+    }
+
+
+    .card {
+        width: 94vw;
+
+        padding:
+            30px
+            15px
+            38px;
+    }
+
+
+    .coffee-cup {
+        font-size: 50px;
+    }
+
+
+    .card h1 {
+        font-size: 25px;
+    }
+
+
+    .card p {
+        font-size: 14px;
+    }
+
+
+    .buttons {
+        gap: 8px;
+    }
+
+
+    .yes-button,
+    .no-button {
+        max-width: 125px;
+
+        height: 54px;
+
+        font-size: 17px;
+    }
+
+
+    .no-button.moved {
+        width: 125px;
+        height: 54px;
+    }
+}
+
+.no-path {
+    display: none !important;
+}
+
+.no-path-line {
+    display: none !important;
+}
+
+.path-heart {
+    display: none !important;
+}
