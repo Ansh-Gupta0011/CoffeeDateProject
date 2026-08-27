@@ -357,7 +357,7 @@ function CafeMap({ onCafeSelect, dateTime }) {
             setLoading(true);
 
             const response = await fetch(
-                "http://localhost:3000/api/coffee-date",
+                "https://coffeedateproject-1.onrender.com/api/coffee-date",
                 {
                     method: "POST",
 
