@@ -3,13 +3,21 @@
 ========================================= */
 
 .datetime-page {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 24px 16px;
+
     background:
         radial-gradient(
             circle at 12% 18%,
@@ -42,28 +50,41 @@
 
 .datetime-card {
     position: relative;
-    width: min(680px, 88vw);
-    min-height: 610px;
-    padding: 60px;
+
+    width: min(620px, 100%);
+
+    /* IMPORTANT:
+       Do not use fixed/min-height here */
+    min-height: 0;
+    height: auto;
+
+    padding: 42px 46px;
+
     box-sizing: border-box;
+
     background:
         linear-gradient(
             145deg,
             rgba(255,255,255,0.99),
             rgba(255,250,253,0.97)
         );
-    border-radius: 42px;
+
+    border-radius: 38px;
+
     border: 1px solid
         rgba(255,255,255,0.95);
+
     box-shadow:
         0 25px 60px
         rgba(120, 60, 130, 0.15),
         0 0 80px
         rgba(255, 150, 200, 0.18);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     z-index: 10;
 }
 
@@ -73,13 +94,16 @@
 ========================================= */
 
 .datetime-icon {
-    font-size: 78px;
-    margin-bottom: 15px;
+    font-size: 64px;
+
+    margin-bottom: 8px;
+
     filter:
         drop-shadow(
             0 12px 12px
             rgba(80, 40, 40, 0.18)
         );
+
     animation:
         coffeeFloat 3s ease-in-out infinite;
 }
@@ -92,11 +116,10 @@
 .datetime-heart {
     position: absolute;
 
-    top: 70px;
+    top: 52px;
+    right: 65px;
 
-    right: 105px;
-
-    font-size: 48px;
+    font-size: 44px;
 
     color: #ff75a1;
 
@@ -109,13 +132,13 @@
 ========================================= */
 
 .datetime-card h1 {
-    margin: 15px 0 12px;
+    margin: 12px 0 10px;
 
     text-align: center;
 
     color: #552538;
 
-    font-size: 42px;
+    font-size: 38px;
 
     line-height: 1.15;
 
@@ -128,13 +151,15 @@
 ========================================= */
 
 .datetime-card p {
-    margin: 0 0 35px;
+    margin: 0 0 26px;
 
     text-align: center;
 
     color: #777;
 
-    font-size: 19px;
+    font-size: 18px;
+
+    line-height: 1.45;
 }
 
 
@@ -145,20 +170,30 @@
 .datetime-input-group {
     width: min(420px, 100%);
 
+    max-width: 100%;
+
+    min-width: 0;
+
     display: flex;
 
     flex-direction: column;
 
-    gap: 8px;
+    gap: 7px;
 
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+
+    box-sizing: border-box;
 }
 
+
+/* =========================================
+   INPUT LABEL
+========================================= */
 
 .datetime-input-group label {
     color: #6b3048;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 700;
 
@@ -166,13 +201,29 @@
 }
 
 
+/* =========================================
+   DATE / TIME INPUT
+========================================= */
+
 .datetime-input-group input {
+    display: block;
+
     width: 100%;
-    height: 58px;
-    padding: 0 18px;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    height: 54px;
+
+    padding: 0 14px;
+
     box-sizing: border-box;
+
     border: 2px solid #ffd0df;
-    border-radius: 18px;
+
+    border-radius: 17px;
+
     background:
         linear-gradient(
             135deg,
@@ -181,17 +232,39 @@
         );
 
     color: #552538;
+
     font-family: inherit;
-    font-size: 17px;
+
+    font-size: 16px;
+
     outline: none;
+
     box-shadow:
         0 8px 20px
         rgba(255, 120, 165, 0.08);
+
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease,
         transform 0.2s ease;
+
+    /* Important for iPhone */
+    -webkit-appearance: none;
+    appearance: none;
 }
+
+
+/* Keep native calendar/clock controls usable */
+.datetime-input-group input::-webkit-calendar-picker-indicator {
+    opacity: 0.75;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
 
 .datetime-input-group input:hover {
     transform: translateY(-2px);
@@ -200,8 +273,13 @@
 }
 
 
+/* =========================================
+   FOCUS
+========================================= */
+
 .datetime-input-group input:focus {
     border-color: #ff76a2;
+
     box-shadow:
         0 0 0 4px
         rgba(255, 118, 162, 0.12),
@@ -215,27 +293,41 @@
 ========================================= */
 
 .next-button {
-    width: 230px;
-    height: 64px;
-    margin-top: 18px;
+    width: 220px;
+
+    max-width: 100%;
+
+    height: 58px;
+
+    margin-top: 12px;
+
     border: none;
+
     border-radius: 50px;
+
     background:
         linear-gradient(
             135deg,
             #ff75a5,
             #ff4f88
         );
+
     color: white;
+
     font-family: inherit;
-    font-size: 20px;
+
+    font-size: 19px;
+
     font-weight: 700;
+
     cursor: pointer;
+
     box-shadow:
         0 14px 28px
         rgba(255, 80, 130, 0.28),
         0 0 20px
         rgba(255, 130, 170, 0.15);
+
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -259,10 +351,14 @@
 
 .datetime-bottom-heart {
     position: absolute;
-    bottom: 30px;
-    left: 45px;
+
+    bottom: 22px;
+
+    left: 32px;
+
     color: #ff79a5;
-    font-size: 24px;
+
+    font-size: 22px;
 }
 
 
@@ -272,16 +368,22 @@
 
 .datetime-hearts {
     position: absolute;
+
     inset: 0;
+
     pointer-events: none;
 }
 
 
 .datetime-hearts span {
     position: absolute;
+
     color: #ff83aa;
+
     font-size: 24px;
-    animation: floatHeart 4s ease-in-out infinite;
+
+    animation:
+        floatHeart 4s ease-in-out infinite;
 }
 
 
@@ -290,27 +392,35 @@
     top: 18%;
 }
 
+
 .datetime-hearts span:nth-child(2) {
     left: 20%;
     bottom: 20%;
+
     animation-delay: 1s;
 }
+
 
 .datetime-hearts span:nth-child(3) {
     right: 12%;
     top: 22%;
+
     animation-delay: 1.5s;
 }
+
 
 .datetime-hearts span:nth-child(4) {
     right: 20%;
     bottom: 18%;
+
     animation-delay: 2s;
 }
+
 
 .datetime-hearts span:nth-child(5) {
     left: 7%;
     bottom: 40%;
+
     animation-delay: 2.5s;
 }
 
@@ -321,19 +431,26 @@
 
 .datetime-sparkles {
     position: absolute;
+
     inset: 0;
+
     pointer-events: none;
 }
 
 
 .datetime-sparkles span {
     position: absolute;
+
     color: white;
+
     font-size: 25px;
+
     text-shadow:
         0 0 10px
         rgba(255, 255, 255, 0.9);
-    animation: sparkle 2s ease-in-out infinite;
+
+    animation:
+        sparkle 2s ease-in-out infinite;
 }
 
 
@@ -342,12 +459,14 @@
     top: 10%;
 }
 
+
 .datetime-sparkles span:nth-child(2) {
     left: 25%;
     top: 75%;
 
     animation-delay: 0.5s;
 }
+
 
 .datetime-sparkles span:nth-child(3) {
     right: 15%;
@@ -356,6 +475,7 @@
     animation-delay: 0.8s;
 }
 
+
 .datetime-sparkles span:nth-child(4) {
     right: 25%;
     bottom: 20%;
@@ -363,12 +483,14 @@
     animation-delay: 1.2s;
 }
 
+
 .datetime-sparkles span:nth-child(5) {
     left: 8%;
     bottom: 15%;
 
     animation-delay: 1.5s;
 }
+
 
 .datetime-sparkles span:nth-child(6) {
     right: 8%;
@@ -413,55 +535,8 @@
 
 
 /* =========================================
-   MOBILE
+   STARS
 ========================================= */
-
-@media (max-width: 700px) {
-
-    .datetime-card {
-        width: 88vw;
-
-        min-height: 540px;
-
-        padding: 40px 25px;
-
-        border-radius: 30px;
-    }
-
-    .datetime-icon {
-        font-size: 58px;
-    }
-
-    .datetime-card h1 {
-        font-size: 30px;
-    }
-
-    .datetime-card p {
-        font-size: 16px;
-
-        margin-bottom: 25px;
-    }
-
-    .datetime-input-group {
-        width: 100%;
-    }
-
-    .next-button {
-        width: 200px;
-
-        height: 58px;
-
-        font-size: 18px;
-    }
-
-    .datetime-heart {
-        top: 65px;
-
-        right: 55px;
-
-        font-size: 35px;
-    }
-}
 
 .datetime-stars {
     position: absolute;
@@ -490,14 +565,12 @@
 
 .dt-star-1 {
     left: 8%;
-
     top: 10%;
 }
 
 
 .dt-star-2 {
     right: 9%;
-
     top: 55%;
 
     color: #bda5ff;
@@ -506,7 +579,6 @@
 
 .dt-star-3 {
     left: 18%;
-
     bottom: 15%;
 
     font-size: 32px;
@@ -532,14 +604,12 @@
 
 .dt-sparkle-1 {
     left: 15%;
-
     top: 30%;
 }
 
 
 .dt-sparkle-2 {
     right: 20%;
-
     top: 14%;
 
     animation-delay: 0.5s;
@@ -548,7 +618,6 @@
 
 .dt-sparkle-3 {
     right: 10%;
-
     bottom: 20%;
 
     animation-delay: 1s;
@@ -557,8 +626,283 @@
 
 .dt-sparkle-4 {
     left: 30%;
-
     bottom: 12%;
 
     animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .datetime-page {
+        padding: 18px 14px;
+    }
+
+    .datetime-card {
+        width: 100%;
+
+        max-width: 520px;
+
+        padding: 32px 24px;
+
+        border-radius: 32px;
+    }
+
+    .datetime-icon {
+        font-size: 56px;
+
+        margin-bottom: 4px;
+    }
+
+    .datetime-card h1 {
+        font-size: 30px;
+
+        margin-top: 8px;
+
+        margin-bottom: 8px;
+    }
+
+    .datetime-card p {
+        font-size: 16px;
+
+        margin-bottom: 22px;
+
+        line-height: 1.4;
+    }
+
+    .datetime-input-group {
+        width: 100%;
+
+        margin-bottom: 14px;
+    }
+
+    .datetime-input-group label {
+        font-size: 15px;
+    }
+
+    .datetime-input-group input {
+        height: 52px;
+
+        font-size: 16px;
+
+        border-radius: 16px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+    }
+
+    .next-button {
+        width: 200px;
+
+        height: 56px;
+
+        font-size: 18px;
+
+        margin-top: 10px;
+    }
+
+    .datetime-heart {
+        top: 48px;
+
+        right: 42px;
+
+        font-size: 34px;
+    }
+
+    .datetime-bottom-heart {
+        bottom: 20px;
+
+        left: 25px;
+    }
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .datetime-page {
+        min-height: 100dvh;
+
+        padding: 14px 12px;
+    }
+
+    .datetime-card {
+        width: 100%;
+
+        padding: 25px 18px 30px;
+
+        border-radius: 28px;
+
+        /* Prevent the card from becoming too tall */
+        max-height: none;
+    }
+
+    .datetime-icon {
+        font-size: 48px;
+
+        margin-bottom: 2px;
+    }
+
+    .datetime-card h1 {
+        font-size: 27px;
+
+        line-height: 1.15;
+
+        margin: 7px 0 8px;
+
+        max-width: 100%;
+    }
+
+    .datetime-card p {
+        font-size: 15px;
+
+        line-height: 1.35;
+
+        margin-bottom: 20px;
+
+        max-width: 320px;
+    }
+
+    .datetime-input-group {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-bottom: 13px;
+    }
+
+    .datetime-input-group label {
+        font-size: 14px;
+
+        padding-left: 2px;
+    }
+
+    .datetime-input-group input {
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        height: 50px;
+
+        font-size: 16px;
+
+        border-radius: 15px;
+
+        padding: 0 10px;
+    }
+
+    .next-button {
+        width: min(200px, 100%);
+
+        height: 54px;
+
+        font-size: 17px;
+
+        margin-top: 8px;
+    }
+
+    .datetime-heart {
+        top: 40px;
+
+        right: 25px;
+
+        font-size: 31px;
+    }
+
+    .datetime-bottom-heart {
+        bottom: 17px;
+
+        left: 22px;
+
+        font-size: 20px;
+    }
+
+    /* Reduce background decorations on small screens */
+    .dt-star {
+        font-size: 34px;
+    }
+
+    .dt-star-3 {
+        font-size: 25px;
+    }
+
+    .dt-sparkle {
+        font-size: 18px;
+    }
+
+    .datetime-hearts span {
+        font-size: 19px;
+    }
+
+    .datetime-sparkles span {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .datetime-page {
+        padding: 10px 9px;
+    }
+
+    .datetime-card {
+        padding: 22px 15px 27px;
+
+        border-radius: 25px;
+    }
+
+    .datetime-icon {
+        font-size: 42px;
+    }
+
+    .datetime-card h1 {
+        font-size: 24px;
+    }
+
+    .datetime-card p {
+        font-size: 14px;
+
+        margin-bottom: 17px;
+    }
+
+    .datetime-input-group {
+        margin-bottom: 11px;
+    }
+
+    .datetime-input-group input {
+        height: 47px;
+
+        font-size: 15px;
+    }
+
+    .next-button {
+        width: 185px;
+
+        height: 50px;
+
+        font-size: 16px;
+    }
+
+    .datetime-heart {
+        top: 35px;
+
+        right: 20px;
+
+        font-size: 27px;
+    }
 }
