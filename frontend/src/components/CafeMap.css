@@ -236,23 +236,18 @@
 
 .cafe-screen-card {
     position: relative;
-    z-index: 5;
-
-    width: min(1100px, 94vw);
-
-    background: rgba(255, 255, 255, 0.96);
-
-    border-radius: 32px;
-
-    padding: 38px 42px 30px;
-
+    width: min(94vw, 1100px);
+    /*
+     * Keep the card inside the browser viewport
+     * while still allowing it to grow if required.
+     */
+    max-height: calc(100dvh - 40px);
+    padding: clamp(22px, 3vw, 40px);
     box-sizing: border-box;
-
-    box-shadow:
-        0 25px 60px rgba(150, 70, 110, 0.16),
-        0 8px 25px rgba(255, 120, 160, 0.12);
-
-    border: 2px solid rgba(255, 190, 215, 0.6);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: clamp(20px, 2.5vw, 34px);
+    z-index: 5;
 }
 
 
@@ -356,16 +351,10 @@
 
 .cafe-map-container {
     width: 100%;
-
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.35fr)
-        minmax(280px, 0.85fr);
-
-    gap: 18px;
-
-    align-items: stretch;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: clamp(14px, 2vw, 24px);
+    min-width: 0;
 }
 
 
@@ -375,16 +364,9 @@
 
 .google-map {
     width: 100%;
-    height: 430px;
-
-    border-radius: 25px;
-
+    height: clamp(300px, 42vh, 430px);
+    border-radius: 24px;
     overflow: hidden;
-
-    border: 2px solid #ffe0eb;
-
-    box-shadow:
-        0 12px 30px rgba(160, 90, 130, 0.12);
 }
 
 
@@ -393,18 +375,11 @@
 ===================================================== */
 
 .cafe-list {
-    height: 430px;
-
+    width: 100%;
+    height: clamp(300px, 42vh, 430px);
     overflow-y: auto;
-
-    padding: 5px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
-
-    box-sizing: border-box;
+    overflow-x: hidden;
+    min-width: 0;
 }
 
 
@@ -830,63 +805,114 @@
 /* =====================================================
    MOBILE
 ===================================================== */
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
 
 @media (max-width: 800px) {
 
     .cafe-page {
-        padding: 20px 12px;
+        width: 100%;
+        min-height: 100dvh;
+
+        padding: 10px;
+
+        display: flex;
         align-items: flex-start;
+        justify-content: center;
+
+        overflow-x: hidden;
+        overflow-y: auto;
     }
+
 
     .cafe-screen-card {
         width: 100%;
+        max-width: 100%;
 
-        padding: 28px 18px 25px;
+        /*
+         * Don't force the card to fill the phone.
+         */
+        min-height: auto;
+        max-height: none;
 
-        border-radius: 25px;
+        padding: 20px 12px 24px;
+
+        border-radius: 22px;
+
+        overflow: visible;
     }
 
-    .cafe-card-lines {
-        display: none;
-    }
-
-    .cafe-header {
-        margin-bottom: 20px;
-    }
-
-    .cafe-header-icon {
-        font-size: 40px;
-    }
-
-    .cafe-header-heart {
-        top: 40px;
-        left: calc(50% + 35px);
-        font-size: 28px;
-    }
-
-    .cafe-header h1 {
-        font-size: 28px;
-    }
 
     .cafe-map-container {
-        grid-template-columns: 1fr;
-        gap: 14px;
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 12px;
     }
+
 
     .google-map {
-        height: 280px;
+        width: 100%;
+
+        height: clamp(180px, 30vh, 230px);
+
+        min-height: 180px;
+
+        border-radius: 18px;
     }
+
 
     .cafe-list {
-        height: 250px;
+        width: 100%;
+
+        height: clamp(180px, 30vh, 230px);
+
+        min-height: 180px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
     }
+
 
     .cafe-footer {
-        margin-top: 18px;
+        width: 100%;
+
+        margin-top: 14px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        position: relative;
+
+        z-index: 20;
     }
 
-    .cafe-bottom-heart {
-        display: none;
+
+    .cafe-continue-button {
+        width: min(100%, 280px);
+
+        height: 50px;
+        min-height: 50px;
+
+        position: relative;
+
+        z-index: 30;
+
+        touch-action: manipulation;
+    }
+
+
+    .cafe-page .stars,
+    .cafe-page .sparkles,
+    .cafe-page .floating-hearts {
+        pointer-events: none;
     }
 }
 
@@ -897,34 +923,204 @@
 
 @media (max-width: 480px) {
 
-    .cafe-header h1 {
-        font-size: 24px;
+    .cafe-page {
+        padding: 10px 8px 25px;
     }
 
+
+    .cafe-screen-card {
+        padding: 20px 11px 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .cafe-header {
+        margin-bottom: 15px;
+    }
+
+
+    .cafe-header-icon {
+        font-size: 34px;
+    }
+
+
+    .cafe-header-heart {
+        top: 31px;
+        left: calc(50% + 29px);
+        font-size: 23px;
+    }
+
+
+    .cafe-header h1 {
+        font-size: 23px;
+
+        line-height: 1.18;
+    }
+
+
     .cafe-header p {
+        font-size: 12px;
+    }
+
+
+    /* Smaller map for phones */
+
+    .google-map {
+        height: 200px;
+        min-height: 200px;
+
+        border-radius: 18px;
+    }
+
+
+    /* Cafe list */
+
+    .cafe-list {
+        height: 220px;
+        min-height: 220px;
+
+        padding: 3px;
+    }
+
+
+    .real-cafe-card {
+        padding: 10px;
+
+        min-height: 64px;
+
+        gap: 8px;
+    }
+
+
+    .real-cafe-icon {
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+
+        font-size: 18px;
+    }
+
+
+    .real-cafe-info h3 {
         font-size: 13px;
     }
 
-    .google-map {
-        height: 240px;
+
+    .real-cafe-info p {
+        font-size: 10.5px;
     }
 
-    .cafe-list {
-        height: 230px;
+
+    .cafe-check {
+        width: 28px;
+        height: 28px;
+
+        min-width: 28px;
+
+        font-size: 15px;
     }
 
-    .real-cafe-card {
-        padding: 11px;
+
+    /* Footer */
+
+    .cafe-footer {
+        margin-top: 14px;
+
+        gap: 9px;
     }
 
-    .real-cafe-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
+
+    .cafe-footer p {
+        font-size: 12px;
+
+        padding: 0 5px;
     }
+
+
+    /* Continue */
 
     .cafe-continue-button {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
+
+        height: 50px;
+        min-height: 50px;
+
+        font-size: 15px;
+
+        border-radius: 26px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+   iPhone SE / small Android devices
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .cafe-page {
+        padding: 8px 6px 20px;
+    }
+
+
+    .cafe-screen-card {
+        padding: 18px 9px 20px;
+    }
+
+
+    .cafe-header h1 {
+        font-size: 21px;
+    }
+
+
+    .cafe-header-icon {
+        font-size: 31px;
+    }
+
+
+    .google-map {
+        height: 180px;
+        min-height: 180px;
+    }
+
+
+    .cafe-list {
+        height: 200px;
+        min-height: 200px;
+    }
+
+
+    .real-cafe-card {
+        padding: 8px;
+    }
+
+
+    .real-cafe-icon {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+    }
+
+
+    .real-cafe-info h3 {
+        font-size: 12px;
+    }
+
+
+    .real-cafe-info p {
+        font-size: 10px;
+    }
+
+
+    .cafe-continue-button {
+        height: 48px;
+        min-height: 48px;
+
+        font-size: 14px;
     }
 }
