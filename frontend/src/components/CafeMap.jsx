@@ -356,18 +356,18 @@ function CafeMap({ onCafeSelect, dateTime }) {
         try {
             setLoading(true);
 
+            const API_URL = import.meta.env.VITE_API_URL;
+
             const response = await fetch(
-                "https://coffeedateproject-1.onrender.com/api/coffee-date",
+                `${API_URL}/api/coffee-date`,
                 {
                     method: "POST",
-
+            
                     headers: {
                         "Content-Type": "application/json"
                     },
-
-                    body: JSON.stringify(
-                        coffeeDateData
-                    )
+            
+                    body: JSON.stringify(coffeeDateData)
                 }
             );
 
