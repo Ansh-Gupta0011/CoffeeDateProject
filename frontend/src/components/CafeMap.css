@@ -1,0 +1,930 @@
+/* =====================================================
+   SCREEN 3 PAGE
+===================================================== */
+
+.cafe-screen-3 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: 45px 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 190, 215, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(210, 185, 255, 0.45),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffdce8,
+            #ffe9ef,
+            #f6ddff
+        );
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.cafe-page .background-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+}
+
+.cafe-page .glow-one {
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 130, 180, 0.25);
+    top: -80px;
+    left: -80px;
+}
+
+.cafe-page .glow-two {
+    width: 320px;
+    height: 320px;
+    background: rgba(190, 150, 255, 0.22);
+    right: -100px;
+    top: 20%;
+}
+
+.cafe-page .glow-three {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 180, 190, 0.25);
+    bottom: -100px;
+    left: 35%;
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.cafe-page .stars,
+.cafe-page .sparkles,
+.cafe-page .floating-hearts {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.big-star,
+.small-star {
+    position: absolute;
+}
+
+.cafe-page .big-star,
+.cafe-page .small-star {
+    position: absolute;
+}
+
+.cafe-page .big-star  {
+    font-size: 35px;
+    color: #ffd77d;
+    filter: drop-shadow(0 5px 10px rgba(255, 190, 100, 0.25));
+}
+
+.star-a {
+    top: 7%;
+    left: 10%;
+}
+
+.star-b {
+    top: 18%;
+    right: 8%;
+}
+
+.star-c {
+    bottom: 15%;
+    left: 7%;
+}
+
+.cafe-page .small-star {
+    color: white;
+    font-size: 20px;
+}
+
+.star-d {
+    top: 10%;
+    left: 30%;
+}
+
+.star-e {
+    top: 25%;
+    right: 25%;
+}
+
+.star-f {
+    bottom: 20%;
+    right: 12%;
+}
+
+.star-g {
+    bottom: 30%;
+    left: 25%;
+}
+
+.star-h {
+    top: 40%;
+    left: 8%;
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.cafe-page .sparkles span {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.cafe-page .sparkles span:nth-child(1) {
+    top: 12%;
+    left: 20%;
+}
+
+.cafe-page .sparkles span:nth-child(2) {
+    top: 25%;
+    right: 18%;
+}
+
+.cafe-page .sparkles span:nth-child(3) {
+    top: 45%;
+    left: 12%;
+}
+
+.cafe-page .sparkles span:nth-child(4) {
+    top: 60%;
+    right: 25%;
+}
+
+.cafe-page .sparkles span:nth-child(5) {
+    bottom: 20%;
+    left: 35%;
+}
+
+.cafe-page .sparkles span:nth-child(6) {
+    bottom: 10%;
+    right: 35%;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.cafe-page .floating-hearts span {
+    position: absolute;
+    color: #f48aaa;
+    opacity: 0.55;
+    font-size: 18px;
+}
+
+.cafe-page .floating-hearts span:nth-child(1) {
+    top: 20%;
+    left: 15%;
+}
+
+.cafe-page .floating-hearts span:nth-child(2) {
+    top: 30%;
+    right: 15%;
+}
+
+.cafe-page .floating-hearts span:nth-child(3) {
+    top: 60%;
+    left: 8%;
+}
+
+.cafe-page .floating-hearts span:nth-child(4) {
+    top: 70%;
+    right: 12%;
+}
+
+.cafe-page .floating-hearts span:nth-child(5) {
+    bottom: 15%;
+    left: 20%;
+}
+
+.cafe-page .floating-hearts span:nth-child(6) {
+    bottom: 25%;
+    right: 30%;
+}
+
+
+/* =====================================================
+   MAIN SCREEN CARD
+===================================================== */
+
+.cafe-screen-card {
+    position: relative;
+    z-index: 5;
+
+    width: min(1100px, 94vw);
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 32px;
+
+    padding: 38px 42px 30px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 25px 60px rgba(150, 70, 110, 0.16),
+        0 8px 25px rgba(255, 120, 160, 0.12);
+
+    border: 2px solid rgba(255, 190, 215, 0.6);
+}
+
+
+/* =====================================================
+   DECORATIVE CARD LINES
+===================================================== */
+
+.cafe-card-lines {
+    position: absolute;
+    top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cafe-card-lines-left {
+    left: 28px;
+}
+
+.cafe-card-lines-right {
+    right: 28px;
+}
+
+.cafe-card-lines span {
+    width: 20px;
+    height: 4px;
+
+    background: #ff8eb0;
+    border-radius: 10px;
+}
+
+.cafe-card-lines span:nth-child(1) {
+    transform: rotate(55deg);
+}
+
+.cafe-card-lines span:nth-child(2) {
+    transform: rotate(15deg);
+}
+
+.cafe-card-lines span:nth-child(3) {
+    transform: rotate(-10deg);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.cafe-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cafe-header-icon {
+    font-size: 48px;
+
+    margin-bottom: 3px;
+
+    filter:
+        drop-shadow(
+            0 7px 10px
+            rgba(120, 80, 70, 0.2)
+        );
+}
+
+.cafe-header-heart {
+    position: absolute;
+
+    top: 50px;
+    left: calc(50% + 45px);
+
+    color: #ff78a2;
+    font-size: 34px;
+}
+
+.cafe-header h1 {
+    margin: 8px 0 8px;
+
+    color: #54283c;
+
+    font-size: clamp(28px, 3vw, 42px);
+
+    line-height: 1.15;
+
+    font-weight: 800;
+}
+
+.cafe-header p {
+    margin: 0;
+
+    color: #967583;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   MAP + LIST
+===================================================== */
+
+.cafe-map-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(280px, 0.85fr);
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =====================================================
+   GOOGLE MAP
+===================================================== */
+
+.google-map {
+    width: 100%;
+    height: 430px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 2px solid #ffe0eb;
+
+    box-shadow:
+        0 12px 30px rgba(160, 90, 130, 0.12);
+}
+
+
+/* =====================================================
+   CAFE LIST
+===================================================== */
+
+.cafe-list {
+    height: 430px;
+
+    overflow-y: auto;
+
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+}
+
+
+/* Scrollbar */
+
+.cafe-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cafe-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cafe-list::-webkit-scrollbar-thumb {
+    background: #e8bfd0;
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   CAFE CARD
+===================================================== */
+
+.real-cafe-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    background: #fff8fb;
+
+    border: 2px solid #ffe0eb;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+.real-cafe-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #ff9abb;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 120, 165, 0.14);
+}
+
+.real-cafe-card.selected {
+    border-color: #ff6195;
+
+    background: #fff0f6;
+
+    box-shadow:
+        0 8px 22px
+        rgba(255, 97, 149, 0.16);
+}
+
+
+/* =====================================================
+   CAFE ICON
+===================================================== */
+
+.real-cafe-icon {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe6ef;
+
+    border-radius: 50%;
+
+    font-size: 23px;
+}
+
+
+/* =====================================================
+   CAFE INFORMATION
+===================================================== */
+
+.real-cafe-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.real-cafe-info h3 {
+    margin: 0 0 4px;
+
+    font-size: 15px;
+
+    color: #54283c;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.real-cafe-info p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #917582;
+}
+
+
+/* =====================================================
+   RATING
+===================================================== */
+
+.cafe-rating {
+    margin-top: 6px;
+
+    color: #b56c86;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.cafe-rating span {
+    color: #b59ba5;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   SELECT CHECK
+===================================================== */
+
+.cafe-check {
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #dc91ae;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(150, 80, 110, 0.1);
+}
+
+.real-cafe-card.selected .cafe-check {
+    background: #df91af;
+
+    color: white;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.cafe-loading {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #9b6b7e;
+}
+
+.loading-heart {
+    font-size: 40px;
+
+    color: #e398b6;
+
+    animation:
+        mapHeartBeat 1.2s ease-in-out infinite;
+}
+
+@keyframes mapHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.cafe-loading p {
+    margin-top: 10px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.cafe-error {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #a16f81;
+}
+
+.cafe-error span {
+    font-size: 35px;
+}
+
+.cafe-error p {
+    max-width: 260px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.cafe-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.cafe-footer p {
+    margin: 0;
+
+    color: #8e6c79;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+.cafe-continue-button {
+    min-width: 180px;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ff6b9a,
+        #ff4f88
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 92, 140, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.cafe-continue-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(255, 92, 140, 0.32);
+}
+
+.cafe-continue-button:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.cafe-continue-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   BOTTOM HEARTS
+===================================================== */
+
+.cafe-bottom-heart {
+    position: absolute;
+
+    bottom: 24px;
+
+    color: #f184a8;
+
+    font-size: 18px;
+}
+
+.cafe-bottom-heart.left {
+    left: 40px;
+}
+
+.cafe-bottom-heart.right {
+    right: 40px;
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.cloud {
+    position: absolute;
+
+    bottom: -40px;
+
+    opacity: 0.35;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    pointer-events: none;
+}
+
+.cloud-left {
+    left: -20px;
+}
+
+.cloud-right {
+    right: -20px;
+}
+
+.cloud span {
+    display: block;
+
+    width: 90px;
+    height: 55px;
+
+    background: white;
+
+    border-radius: 50px 50px 0 0;
+}
+
+.cloud span:nth-child(2) {
+    width: 120px;
+    height: 75px;
+
+    margin-left: -30px;
+}
+
+.cloud span:nth-child(3) {
+    width: 80px;
+    height: 50px;
+
+    margin-left: -25px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .cafe-page {
+        padding: 20px 12px;
+        align-items: flex-start;
+    }
+
+    .cafe-screen-card {
+        width: 100%;
+
+        padding: 28px 18px 25px;
+
+        border-radius: 25px;
+    }
+
+    .cafe-card-lines {
+        display: none;
+    }
+
+    .cafe-header {
+        margin-bottom: 20px;
+    }
+
+    .cafe-header-icon {
+        font-size: 40px;
+    }
+
+    .cafe-header-heart {
+        top: 40px;
+        left: calc(50% + 35px);
+        font-size: 28px;
+    }
+
+    .cafe-header h1 {
+        font-size: 28px;
+    }
+
+    .cafe-map-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .google-map {
+        height: 280px;
+    }
+
+    .cafe-list {
+        height: 250px;
+    }
+
+    .cafe-footer {
+        margin-top: 18px;
+    }
+
+    .cafe-bottom-heart {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .cafe-header h1 {
+        font-size: 24px;
+    }
+
+    .cafe-header p {
+        font-size: 13px;
+    }
+
+    .google-map {
+        height: 240px;
+    }
+
+    .cafe-list {
+        height: 230px;
+    }
+
+    .real-cafe-card {
+        padding: 11px;
+    }
+
+    .real-cafe-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .cafe-continue-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}

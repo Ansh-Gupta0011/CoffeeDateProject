@@ -1,0 +1,765 @@
+/* =====================================================
+   PAGE
+===================================================== */
+
+.confirmation-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 210, 225, 0.55),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 225, 235, 0.65),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #ffeef5
+        );
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        sans-serif;
+
+    color: #54283c;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.confirmation-card {
+    position: relative;
+
+    width: min(560px, calc(100% - 40px));
+
+    padding: 45px 50px 40px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfd,
+            #fff5f8
+        );
+
+    border: 2px solid #ffe0eb;
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 25px 60px rgba(170, 90, 125, 0.16),
+        0 8px 25px rgba(255, 120, 165, 0.10);
+
+    text-align: center;
+
+    z-index: 5;
+
+    animation:
+        confirmationCardIn
+        0.7s
+        ease;
+}
+
+@keyframes confirmationCardIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =====================================================
+   COFFEE
+===================================================== */
+
+.confirmation-coffee {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffe5ee;
+
+    font-size: 43px;
+
+    box-shadow:
+        0 8px 20px rgba(220, 120, 155, 0.12);
+
+    animation:
+        coffeeFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes coffeeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =====================================================
+   HEART
+===================================================== */
+
+.confirmation-heart {
+    margin-top: -15px;
+
+    color: #df91af;
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.confirmation-card h1 {
+    margin: 12px 0 8px;
+
+    color: #71334d;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.5px;
+}
+
+.confirmation-subtitle {
+    margin: 0 0 28px;
+
+    color: #9b7180;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   DATE DETAILS
+===================================================== */
+
+.date-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    text-align: left;
+}
+
+.detail-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 16px;
+
+    border-radius: 18px;
+
+    background: #fff9fb;
+
+    border: 1px solid #ffe1eb;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(220, 120, 155, 0.10);
+}
+
+
+/* =====================================================
+   DETAIL ICON
+===================================================== */
+
+.detail-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffe8f0;
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   DETAIL TEXT
+===================================================== */
+
+.detail-item > div:last-child {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.detail-label {
+    margin-bottom: 2px;
+
+    color: #c18b9f;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+.detail-item strong {
+    color: #663247;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.detail-item small {
+    margin-top: 2px;
+
+    color: #a17f8c;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   LOVE MESSAGE
+===================================================== */
+
+.love-message {
+    margin: 24px 0 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color: #9a6478;
+}
+
+.love-message > span {
+    color: #e39ab4;
+
+    font-size: 20px;
+}
+
+.love-message p {
+    margin: 0;
+
+    color: #8f6174;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.confirmation-footer {
+    padding-top: 17px;
+
+    border-top: 1px dashed #f0c8d6;
+}
+
+.confirmation-footer p {
+    margin: 0;
+
+    color: #b26d87;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   DECORATIVE LINES
+===================================================== */
+
+.confirmation-lines {
+    position: absolute;
+
+    top: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.confirmation-lines span {
+    display: block;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #f1bdcf;
+}
+
+.confirmation-lines span:nth-child(1) {
+    width: 28px;
+}
+
+.confirmation-lines span:nth-child(2) {
+    width: 18px;
+}
+
+.confirmation-lines span:nth-child(3) {
+    width: 10px;
+}
+
+.confirmation-lines-left {
+    left: 25px;
+}
+
+.confirmation-lines-right {
+    right: 25px;
+
+    align-items: flex-end;
+}
+
+
+/* =====================================================
+   BOTTOM HEARTS
+===================================================== */
+
+.confirmation-bottom-heart {
+    position: absolute;
+
+    bottom: 18px;
+
+    color: #f0b1c6;
+
+    font-size: 20px;
+}
+
+.confirmation-bottom-heart.left {
+    left: 28px;
+
+    transform: rotate(-15deg);
+}
+
+.confirmation-bottom-heart.right {
+    right: 28px;
+
+    transform: rotate(15deg);
+}
+
+
+/* =====================================================
+   BACKGROUND GLOWS
+===================================================== */
+
+.background-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+.glow-one {
+    width: 260px;
+    height: 260px;
+
+    top: -100px;
+    left: -80px;
+
+    background: rgba(255, 184, 208, 0.25);
+}
+
+.glow-two {
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    bottom: -100px;
+
+    background: rgba(255, 201, 218, 0.30);
+}
+
+.glow-three {
+    width: 150px;
+    height: 150px;
+
+    top: 35%;
+    right: 5%;
+
+    background: rgba(255, 225, 236, 0.35);
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.stars,
+.sparkles,
+.floating-hearts {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.big-star,
+.small-star {
+    position: absolute;
+
+    color: #e8a7bc;
+}
+
+.big-star {
+    font-size: 22px;
+}
+
+.small-star {
+    font-size: 14px;
+}
+
+.star-a {
+    top: 12%;
+    left: 12%;
+}
+
+.star-b {
+    top: 18%;
+    right: 14%;
+}
+
+.star-c {
+    bottom: 15%;
+    left: 16%;
+}
+
+.star-d {
+    top: 35%;
+    left: 7%;
+}
+
+.star-e {
+    top: 42%;
+    right: 8%;
+}
+
+.star-f {
+    bottom: 28%;
+    right: 14%;
+}
+
+.star-g {
+    bottom: 10%;
+    right: 30%;
+}
+
+.star-h {
+    top: 8%;
+    left: 42%;
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkles span {
+    position: absolute;
+
+    color: #efb2c6;
+
+    font-size: 15px;
+
+    animation:
+        sparkleFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+.sparkles span:nth-child(1) {
+    top: 22%;
+    left: 22%;
+}
+
+.sparkles span:nth-child(2) {
+    top: 30%;
+    right: 20%;
+}
+
+.sparkles span:nth-child(3) {
+    bottom: 22%;
+    left: 27%;
+}
+
+.sparkles span:nth-child(4) {
+    bottom: 30%;
+    right: 25%;
+}
+
+.sparkles span:nth-child(5) {
+    top: 65%;
+    left: 10%;
+}
+
+.sparkles span:nth-child(6) {
+    top: 14%;
+    right: 35%;
+}
+
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-hearts span {
+    position: absolute;
+
+    color: #eab0c2;
+
+    font-size: 15px;
+
+    opacity: 0.5;
+
+    animation:
+        heartFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 8%;
+    top: 55%;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 18%;
+    bottom: 8%;
+}
+
+.floating-hearts span:nth-child(3) {
+    right: 8%;
+    top: 58%;
+}
+
+.floating-hearts span:nth-child(4) {
+    right: 20%;
+    bottom: 10%;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 30%;
+    top: 8%;
+}
+
+.floating-hearts span:nth-child(6) {
+    right: 35%;
+    bottom: 6%;
+}
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.cloud {
+    position: absolute;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 2px;
+
+    opacity: 0.45;
+}
+
+.cloud span {
+    display: block;
+
+    width: 40px;
+    height: 25px;
+
+    background: #fff;
+
+    border-radius: 50px;
+}
+
+.cloud span:nth-child(2) {
+    width: 55px;
+    height: 38px;
+}
+
+.cloud span:nth-child(3) {
+    width: 35px;
+    height: 23px;
+}
+
+.cloud-left {
+    left: -25px;
+    bottom: 12%;
+}
+
+.cloud-right {
+    right: -20px;
+    top: 12%;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .confirmation-card {
+        width: calc(100% - 24px);
+
+        padding: 32px 20px 30px;
+
+        border-radius: 26px;
+    }
+
+    .confirmation-card h1 {
+        font-size: 34px;
+    }
+
+    .confirmation-coffee {
+        width: 68px;
+        height: 68px;
+
+        font-size: 36px;
+    }
+
+    .detail-item {
+        padding: 12px;
+    }
+
+    .detail-item strong {
+        font-size: 13px;
+    }
+
+    .confirmation-lines {
+        display: none;
+    }
+
+    .cloud {
+        display: none;
+    }
+}

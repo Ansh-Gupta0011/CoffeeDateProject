@@ -1,0 +1,1788 @@
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.coffee-page {
+  position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    min-height: 650px;
+
+    overflow: visible;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(190, 150, 255, 0.55),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 150, 210, 0.55),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 215, 175, 0.55),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #dcb7f4 0%,
+            #f6bddc 35%,
+            #ffd7d7 65%,
+            #e1c4f5 100%
+        );
+}
+
+/* =========================================
+   DREAMY GLOW
+========================================= */
+
+.background-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 400px;
+  height: 400px;
+
+  left: -100px;
+  top: 100px;
+
+  background: rgba(188, 148, 255, 0.38);
+}
+
+.glow-two {
+  width: 500px;
+  height: 500px;
+
+  right: -120px;
+  top: 80px;
+
+  background: rgba(255, 166, 205, 0.45);
+}
+
+.glow-three {
+  width: 600px;
+  height: 300px;
+
+  bottom: -100px;
+  left: 30%;
+
+  background: rgba(255, 223, 190, 0.65);
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+  .card {
+    position: relative;
+    width: min(760px, 88vw);
+    min-height: 590px;
+    padding: 65px 60px;
+    box-sizing: border-box;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.99),
+            rgba(255,250,253,0.97)
+        );
+    border-radius: 42px;
+    border: 1px solid
+        rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 25px 60px
+        rgba(120, 60, 130, 0.15),
+        0 0 80px
+        rgba(255, 150, 200, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    z-index: 10;
+  }
+
+/* =========================================
+   COFFEE
+========================================= */
+
+.coffee-cup {
+  font-size: 78px;
+  margin-bottom: 22px;
+  filter:
+        drop-shadow(
+            0 12px 12px
+            rgba(80, 40, 40, 0.18)
+        );
+    animation:
+        coffeeFloat 3s ease-in-out infinite;
+}
+
+@keyframes coffeeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+.coffee-small-heart {
+  position: absolute;
+  top: 95px;
+  right: 31%;
+  font-size: 46px;
+  color: #ff78a5;
+    animation:
+        heartPulse 2s ease-in-out infinite;
+    text-shadow:
+        0 0 15px
+        rgba(255, 120, 165, 0.35);
+}
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.card h1 {
+  margin: 0;
+
+  color: #472634;
+
+  font-size: clamp(31px, 4vw, 46px);
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.card p {
+  margin-top: 27px;
+  margin-bottom: 40px;
+
+  color: #777;
+
+  font-size: 21px;
+}
+
+.card p span {
+  display: inline-block;
+
+  animation: heartbeat 1.5s infinite;
+}
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+  .yes-button {
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff75a5,
+            #ff4f88
+        );
+
+    box-shadow:
+        0 12px 25px
+        rgba(255, 80, 130, 0.30),
+
+        0 0 25px
+        rgba(255, 130, 170, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.yes-button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 18px 35px
+        rgba(255, 80, 130, 0.38);
+  }
+
+  .yes-button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 17px 35px rgba(255, 80, 130, 0.45); 
+  } 
+
+/* =========================================
+   CARD DECORATIONS
+========================================= */
+
+.card-lines {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.card-lines span {
+  width: 24px;
+  height: 5px;
+  border-radius: 10px;
+  background: #ff82ab;
+  box-shadow:
+        0 0 10px
+        rgba(255, 130, 170, 0.35);
+  transform: rotate(18deg);
+}
+
+.card-lines-left {
+  left: 35px;
+  top: 55px;
+}
+
+.card-lines-left span:nth-child(1) {
+  transform: rotate(55deg);
+  left: 8px;
+  top: 0;
+}
+
+.card-lines-left span:nth-child(2) {
+  transform: rotate(15deg);
+  left: 0;
+  top: 17px;
+}
+
+.card-lines-left span:nth-child(3) {
+  transform: rotate(-10deg);
+  left: 8px;
+  top: 32px;
+}
+
+.card-lines-right {
+  right: 35px;
+  top: 55px;
+}
+
+.card-lines-right span {
+    transform: rotate(-18deg);
+}
+
+.card-lines-right span:nth-child(1) {
+  transform: rotate(-55deg);
+  right: 8px;
+  top: 0;
+}
+
+.card-lines-right span:nth-child(2) {
+  transform: rotate(-15deg);
+  right: 0;
+  top: 17px;
+}
+
+.card-lines-right span:nth-child(3) {
+  transform: rotate(10deg);
+  right: 8px;
+  top: 32px;
+}
+
+.card-bottom-heart {
+  position: absolute;
+
+  bottom: 30px;
+
+  color: #ff83aa;
+
+  font-size: 22px;
+}
+
+.card-bottom-heart.left {
+  left: 65px;
+}
+
+.card-bottom-heart.right {
+  right: 65px;
+}
+
+/* =========================================
+   NO BUTTON
+========================================= */
+
+  
+
+  .no-button.moved {
+      position: fixed;
+
+      width: 150px;
+      height: 60px;
+
+      z-index: 1000;
+
+      transition:
+          left 0.35s cubic-bezier(
+              0.2,
+              0.8,
+              0.2,
+              1
+          ),
+          top 0.35s cubic-bezier(
+              0.2,
+              0.8,
+              0.2,
+              1
+          ),
+          transform 0.15s ease;
+
+      box-shadow:
+          0 8px 25px
+          rgba(255, 100, 150, 0.25);
+  }
+
+
+/* Button rays */
+
+.button-rays {
+  position: absolute;
+
+  top: -25px;
+  right: -25px;
+
+  width: 45px;
+  height: 45px;
+
+  pointer-events: none;
+}
+
+.button-rays i {
+  position: absolute;
+
+  width: 5px;
+  height: 24px;
+
+  border-radius: 10px;
+
+  background: white;
+}
+
+.button-rays i:nth-child(1) {
+  left: 5px;
+  top: 0;
+
+  transform: rotate(15deg);
+}
+
+.button-rays i:nth-child(2) {
+  right: 5px;
+  top: 3px;
+
+  transform: rotate(45deg);
+}
+
+.button-rays i:nth-child(3) {
+  right: -5px;
+  top: 20px;
+
+  transform: rotate(75deg);
+}
+
+/* =========================================
+   NO BUTTON PATH
+========================================= */
+
+  .no-path {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    pointer-events: none;
+  }
+
+  .no-path-line {
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 10 10;
+    filter: drop-shadow(0 2px 3px rgba(255, 80, 140, 0.5) );
+    animation: movingDash 1s linear infinite;
+  }
+
+  @keyframes movingDash {
+    to { stroke-dashoffset: -40; }
+  }
+
+/* Hearts appearing at previous positions */
+
+.path-heart {
+  position: fixed;
+
+  z-index: 55;
+
+  color: #ff83aa;
+
+  font-size: 18px;
+
+  pointer-events: none;
+
+  animation: pathHeartAppear 0.5s ease;
+}
+
+/* =========================================
+   STARS
+========================================= */
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.big-star,
+.small-star {
+  position: absolute;
+
+  display: block;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.8);
+
+  animation: starTwinkle 3s infinite ease-in-out;
+}
+
+.big-star {
+  position: absolute;
+  font-size: 52px;
+  color: #ffe28a;
+ text-shadow:
+        0 0 18px
+        rgba(255, 220, 130, 0.75);
+  animation:
+        starFloat 4s ease-in-out infinite;
+}
+
+.small-star {
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  text-shadow:
+        0 0 12px white;
+  animation:
+        sparkle 2s ease-in-out infinite;
+}
+
+@keyframes starFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+    50% {
+        transform:
+            translateY(-14px)
+            rotate(8deg);
+    }
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+.star-a {
+  left: 24%;
+  top: 7%;
+
+  color: #ffe4a5;
+}
+
+.star-b {
+  left: 7%;
+  top: 24%;
+
+  font-size: 40px;
+
+  color: #ffe6a8;
+}
+
+.star-c {
+  right: 7%;
+  bottom: 38%;
+
+  font-size: 55px;
+
+  color: #c9b2ff;
+}
+
+.star-d {
+  left: 4%;
+  top: 12%;
+}
+
+.star-e {
+  left: 40%;
+  top: 6%;
+}
+
+.star-f {
+  right: 18%;
+  top: 8%;
+}
+
+.star-g {
+  right: 3%;
+  top: 28%;
+}
+
+.star-h {
+  left: 32%;
+  bottom: 7%;
+}
+
+/* =========================================
+   SPARKLES
+========================================= */
+
+.sparkles {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+.sparkles span {
+  position: absolute;
+
+  color: white;
+
+  font-size: 30px;
+
+  text-shadow:
+    0 0 8px white,
+    0 0 18px white;
+
+  animation: sparkle 2.5s infinite ease-in-out;
+}
+
+.sparkles span:nth-child(1) {
+  left: 5%;
+  top: 8%;
+}
+
+.sparkles span:nth-child(2) {
+  left: 13%;
+  top: 34%;
+}
+
+.sparkles span:nth-child(3) {
+  left: 29%;
+  top: 18%;
+}
+
+.sparkles span:nth-child(4) {
+  left: 45%;
+  top: 12%;
+}
+
+.sparkles span:nth-child(5) {
+  right: 31%;
+  top: 16%;
+}
+
+.sparkles span:nth-child(6) {
+  right: 13%;
+  top: 32%;
+}
+
+.sparkles span:nth-child(7) {
+  right: 5%;
+  top: 9%;
+}
+
+.sparkles span:nth-child(8) {
+  left: 6%;
+  bottom: 25%;
+}
+
+.sparkles span:nth-child(9) {
+  left: 18%;
+  bottom: 12%;
+}
+
+.sparkles span:nth-child(10) {
+  left: 43%;
+  bottom: 5%;
+}
+
+.sparkles span:nth-child(11) {
+  right: 22%;
+  bottom: 13%;
+}
+
+.sparkles span:nth-child(12) {
+  right: 5%;
+  bottom: 25%;
+}
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+.floating-hearts {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.floating-hearts span {
+  position: absolute;
+  color: #ff7fa8;
+  font-size: 24px;
+  opacity: 0.75;
+  text-shadow:
+        0 0 10px
+        rgba(255, 120, 165, 0.25);
+  animation:
+        floatingHeart 5s ease-in-out infinite;
+}
+
+@keyframes floatingHeart {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+
+        opacity: 1;
+    }
+}
+
+.floating-hearts span:nth-child(1) {
+  left: 35%;
+  top: 18%;
+}
+
+.floating-hearts span:nth-child(2) {
+  right: 30%;
+  top: 22%;
+}
+
+.floating-hearts span:nth-child(3) {
+  right: 18%;
+  top: 52%;
+}
+
+.floating-hearts span:nth-child(4) {
+  left: 17%;
+  top: 53%;
+}
+
+.floating-hearts span:nth-child(5) {
+  left: 7%;
+  bottom: 31%;
+}
+
+.floating-hearts span:nth-child(6) {
+  right: 8%;
+  bottom: 27%;
+}
+
+.floating-hearts span:nth-child(7) {
+  left: 10%;
+  bottom: 10%;
+}
+
+.floating-hearts span:nth-child(8) {
+  right: 34%;
+  bottom: 8%;
+}
+
+/* =========================================
+   CLOUDS
+========================================= */
+
+.cloud {
+  position: absolute;
+
+  bottom: -35px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  opacity: 0.65;
+
+  pointer-events: none;
+}
+
+.cloud-left {
+  left: -50px;
+}
+
+.cloud-right {
+  right: -50px;
+}
+
+.cloud span {
+  display: block;
+
+  width: 130px;
+  height: 70px;
+
+  margin-left: -25px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  border-radius:
+    100px
+    100px
+    0
+    0;
+}
+
+.cloud span:nth-child(2) {
+  width: 160px;
+  height: 100px;
+
+  border-radius:
+    120px
+    120px
+    0
+    0;
+}
+
+.cloud span:nth-child(3) {
+  width: 130px;
+  height: 75px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.15);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+
+    transform:
+      scale(0.7)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.2)
+      rotate(20deg);
+  }
+}
+
+@keyframes heartFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-5deg);
+  }
+
+  50% {
+    transform:
+      translateY(-15px)
+      rotate(8deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -38;
+  }
+}
+
+@keyframes pathHeartAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes noButtonAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+  @media (max-width: 700px) {
+    .coffee-page {
+      position: relative;
+
+      width: 100vw;
+      height: 100vh;
+
+      min-height: 650px;
+
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background:
+          radial-gradient(
+              circle at 20% 20%,
+              #ffd8e5 0%,
+              transparent 35%
+          ),
+          radial-gradient(
+              circle at 80% 30%,
+              #ffd2df 0%,
+              transparent 35%
+          ),
+          linear-gradient(
+              135deg,
+              #ffdce7,
+              #ffd0dd,
+              #ffe2d8
+          );
+    }
+
+    .card {
+      width: 88vw;
+
+      min-height: 470px;
+
+      padding: 45px 25px;
+    }
+
+    .coffee-cup {
+      font-size: 62px;
+
+      margin-bottom: 22px;
+    }
+
+    .coffee-small-heart {
+      right: 24%;
+      top: 50px;
+    }
+
+    .card h1 {
+      font-size: 29px;
+    }
+
+    .card p {
+      font-size: 17px;
+
+      margin-bottom: 30px;
+    }
+
+    .yes-button {
+      padding: 14px 35px;
+
+      font-size: 18px;
+    }
+
+    .big-star {
+      font-size: 40px;
+    }
+
+    .cloud span {
+      width: 90px;
+      height: 55px;
+    }
+
+    .no-button:hover {
+      transform: scale(1.03);
+    }
+
+    /* ================================
+    BUTTON AREA
+  ================================ */
+
+  .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+
+      margin-top: 42px;
+
+      position: relative;
+  }
+
+
+  /* ================================
+    YES BUTTON
+  ================================ */
+
+  /* YES */
+
+  .yes-button {
+      border: none;
+
+      color: white;
+
+      background: linear-gradient(
+          135deg,
+          #ff6b9b,
+          #ff4f87
+      );
+
+      box-shadow:
+          0 15px 30px
+          rgba(255, 80, 130, 0.30);
+
+      transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+  }
+
+  .yes-button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+          0 18px 35px
+          rgba(255, 80, 130, 0.38);
+  }
+
+
+  /* ================================
+    INITIAL NO BUTTON
+  ================================ */
+
+  .no-button {
+    position: relative;
+    flex-shrink: 0;
+    border: 2px solid #ff9bbb;
+    background:
+        rgba(255,255,255,0.96);
+    color: #e95f88;
+    box-shadow:
+        0 10px 22px
+        rgba(255, 100, 150, 0.14);
+    z-index: 1000;
+  }
+
+
+  /* ================================
+    MOVING NO BUTTON
+  ================================ */
+
+  .no-button.moved {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 68px;
+    margin: 0;
+    z-index: 99999;
+    border: 2px solid #ff9bbb;
+    border-radius: 50px;
+    background: white;
+    color: #e95f88;
+    transition:
+        left 0.35s ease,
+        top 0.35s ease;
+    box-shadow:
+        0 15px 35px
+        rgba(255, 100, 150, 0.25);
+    }
+  }
+
+  /* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   YES + NO COMMON STYLE
+========================================= */
+
+.yes-button,
+.no-button {
+    width: 180px;
+
+    height: 72px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+.yes-button {
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b9b,
+            #ff4f87
+        );
+
+    box-shadow:
+        0 15px 30px
+        rgba(255, 80, 130, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.yes-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(255, 80, 130, 0.40);
+}
+
+
+/* =========================================
+   NO BUTTON - INITIAL
+========================================= */
+
+.no-button {
+    position: relative;
+
+    flex-shrink: 0;
+
+    border: 2px solid #ff9fbd;
+
+    background: #ffffff;
+
+    color: #e95f88;
+
+    box-shadow:
+        0 10px 22px
+        rgba(255, 100, 150, 0.15);
+
+    z-index: 1000;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* =========================================
+   NO BUTTON - MOVING
+========================================= */
+
+.no-button.moved {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 180px;
+    height: 72px;
+
+    margin: 0;
+
+    z-index: 99999;
+
+    border: 2px solid #ff9fbd;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #e95f88;
+
+    box-shadow:
+        0 12px 30px
+        rgba(255, 100, 150, 0.28);
+
+    transition:
+        left 0.35s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        ),
+
+        top 0.35s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        );
+}
+.card h1 {
+    margin: 18px 0 18px;
+
+    text-align: center;
+
+    color: #552538;
+
+    font-size: clamp(
+        34px,
+        4vw,
+        52px
+    );
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    text-shadow:
+        0 3px 10px
+        rgba(120, 50, 80, 0.08);
+}
+.card p {
+    margin: 0 0 38px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 20px;
+
+    letter-spacing: 0.2px;
+}
+
+.yes-button,
+.no-button {
+    width: 180px;
+
+    height: 68px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+/* =====================================================
+   SCREEN 3 - CAFE SELECTION
+===================================================== */
+
+.cafe-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 194, 214, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(214, 190, 255, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5fa,
+            #fdf1f7,
+            #f7f0ff
+        );
+
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.cafe-background-glow {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.45;
+
+    pointer-events: none;
+}
+
+.cafe-background-glow.glow-left {
+    left: -100px;
+    top: 10%;
+
+    background: #ffb6d5;
+}
+
+.cafe-background-glow.glow-right {
+    right: -100px;
+    bottom: 5%;
+
+    background: #cdb8ff;
+}
+
+
+/* =====================================================
+   FLOATING STARS
+===================================================== */
+
+.cafe-stars {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.cafe-stars span {
+    position: absolute;
+
+    color: #e8a4bd;
+
+    text-shadow:
+        0 0 8px rgba(255, 174, 203, 0.7);
+
+    animation:
+        cafeStarFloat 4s ease-in-out infinite;
+}
+
+.cafe-stars span:nth-child(1) {
+    top: 12%;
+    left: 12%;
+
+    font-size: 24px;
+}
+
+.cafe-stars span:nth-child(2) {
+    top: 8%;
+    right: 16%;
+
+    font-size: 18px;
+
+    animation-delay: 1s;
+}
+
+.cafe-stars span:nth-child(3) {
+    top: 35%;
+    left: 5%;
+
+    font-size: 16px;
+
+    animation-delay: 1.5s;
+}
+
+.cafe-stars span:nth-child(4) {
+    top: 20%;
+    right: 7%;
+
+    font-size: 25px;
+
+    animation-delay: 0.5s;
+}
+
+.cafe-stars span:nth-child(5) {
+    bottom: 20%;
+    left: 9%;
+
+    font-size: 22px;
+
+    animation-delay: 2s;
+}
+
+.cafe-stars span:nth-child(6) {
+    bottom: 10%;
+    right: 12%;
+
+    font-size: 26px;
+
+    animation-delay: 1.2s;
+}
+
+.cafe-stars span:nth-child(7) {
+    bottom: 35%;
+    right: 4%;
+
+    font-size: 15px;
+
+    animation-delay: 2.5s;
+}
+
+.cafe-stars span:nth-child(8) {
+    bottom: 15%;
+    left: 20%;
+
+    font-size: 18px;
+
+    animation-delay: 0.8s;
+}
+
+.cafe-stars span:nth-child(9) {
+    top: 50%;
+    left: 8%;
+
+    font-size: 18px;
+
+    animation-delay: 1.8s;
+}
+
+@keyframes cafeStarFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(8deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   MAIN CAFE CARD
+===================================================== */
+
+.cafe-card {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1050px, 94vw);
+
+    max-height: 94vh;
+
+    padding: 34px;
+
+    box-sizing: border-box;
+
+    border-radius: 34px;
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 25px 70px rgba(126, 72, 100, 0.18),
+        0 8px 25px rgba(126, 72, 100, 0.08);
+
+    backdrop-filter: blur(18px);
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   COFFEE ICON
+===================================================== */
+
+.cafe-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6,
+            #ffe3ef
+        );
+
+    box-shadow:
+        0 8px 22px rgba(221, 130, 165, 0.18);
+
+    font-size: 34px;
+}
+
+
+/* =====================================================
+   HEART
+===================================================== */
+
+.cafe-heart {
+    position: absolute;
+
+    top: 28px;
+    right: 32px;
+
+    font-size: 30px;
+
+    color: #e993b5;
+
+    animation:
+        cafeHeartBeat 1.8s ease-in-out infinite;
+}
+
+@keyframes cafeHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.cafe-card h1 {
+    margin: 8px 0 8px;
+
+    color: #61394c;
+
+    font-family:
+        "Georgia",
+        serif;
+
+    font-size: clamp(
+        28px,
+        4vw,
+        42px
+    );
+
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.cafe-subtitle {
+    margin: 0 0 22px;
+
+    color: #9b6b7e;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+.cafe-continue {
+    margin-top: 22px;
+
+    min-width: 210px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #e8dce1;
+
+    color: #a08c94;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: not-allowed;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.cafe-continue.active {
+    background:
+        linear-gradient(
+            135deg,
+            #ed91b4,
+            #d978a0
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(
+            217,
+            120,
+            160,
+            0.35
+        );
+}
+
+.cafe-continue.active:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(
+            217,
+            120,
+            160,
+            0.4
+        );
+}
+
+
+/* =====================================================
+   HINT
+===================================================== */
+
+.cafe-hint {
+    margin: 8px 0 0;
+
+    color: #b28a99;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .cafe-page {
+        padding: 14px;
+    }
+
+    .cafe-card {
+        width: 100%;
+
+        padding: 24px 16px;
+
+        border-radius: 26px;
+
+        max-height: 96vh;
+
+        overflow-y: auto;
+    }
+
+    .cafe-card h1 {
+        font-size: 28px;
+    }
+
+    .cafe-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 28px;
+    }
+
+    .cafe-heart {
+        top: 20px;
+        right: 20px;
+    }
+
+    .cafe-continue {
+        width: 90%;
+    }
+}
